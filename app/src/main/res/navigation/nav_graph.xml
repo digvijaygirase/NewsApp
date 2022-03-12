@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/headlinesFragment">
+
+    <fragment
+        android:id="@+id/headlinesFragment"
+        android:name="com.digvijay.newsapp.presentation.headlines.HeadlinesFragment"
+        android:label="HeadlinesFragment"
+        tools:layout="@layout/fragment_headlines">
+        <action
+            android:id="@+id/action_headlinesFragment_to_newsArticleFragment"
+            app:destination="@id/newsArticleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/newsArticleFragment"
+        android:name="com.digvijay.newsapp.presentation.article.NewsArticleFragment"
+        android:label="NewsArticleFragment"
+        tools:layout="@layout/fragment_news_article">
+        <argument
+            android:name="position"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+</navigation>

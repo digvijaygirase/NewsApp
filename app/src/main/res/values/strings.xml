@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">News App</string>
+    <string name="app_name">News</string>
+    <string name="usa">USA</string>
+    <string name="canada">Canada</string>
 </resources>

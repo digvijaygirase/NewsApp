@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidWorkspace/NewsApp/app/src/main/res/font/font.xml" value="0.2537037037037037" />
         <entry key="..\:/AndroidWorkspace/NewsApp/app/src/main/res/layout/activity_main.xml" value="0.17391304347826086" />
         <entry key="..\:/AndroidWorkspace/NewsApp/app/src/main/res/layout/fragment_headlines.xml" value="0.28541666666666665" />
         <entry key="..\:/AndroidWorkspace/NewsApp/app/src/main/res/layout/fragment_news_article.xml" value="0.28541666666666665" />

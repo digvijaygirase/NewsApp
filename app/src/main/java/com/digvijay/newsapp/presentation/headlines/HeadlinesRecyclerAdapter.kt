@@ -25,7 +25,7 @@ class HeadlinesRecyclerAdapter(
             binding.titleTV.text = headlines[position].title
             Glide.with(binding.root)
                 .load(headlines[position].urlToImage)
-                .apply(RequestOptions.overrideOf(380))
+                .apply(RequestOptions.overrideOf(400))
                 .into(binding.thumbnailIV)
             binding.root.setOnClickListener { itemClickListener.onClick(position) }
         }

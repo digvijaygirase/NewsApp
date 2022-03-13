@@ -55,7 +55,8 @@ class NewsApiDataSourceTest {
                     "The Chipola Complex, which encompasses three fires, has burned more than 34,000 acres in the Florida Panhandle. More severe weather is expected on Friday, meteorologists said.",
                     "https://static01.nyt.com/images/2022/03/09/multimedia/09xp-florida-wildfires-03/09xp-florida-wildfires-03-facebookJumbo.jpg",
                     "2022-03-10T10:07:30Z",
-                    "A series of severe storms and substantial rainfall on Wednesday helped firefighters in the Florida Panhandle in their efforts to contain wildfires that are threatening nearby communities, officials s… [+740 chars]"
+                    "A series of severe storms and substantial rainfall on Wednesday helped firefighters in the Florida Panhandle in their efforts to contain wildfires that are threatening nearby communities, officials s… [+740 chars]",
+                    "https://www.nytimes.com/2022/03/09/us/florida-wildfire-chipola-complex.html"
                 )
             assertEquals(actual,expected)
         }

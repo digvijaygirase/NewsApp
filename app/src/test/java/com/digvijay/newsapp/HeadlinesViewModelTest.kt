@@ -80,7 +80,8 @@ class HeadlinesViewModelTest {
                         it.description,
                         it.urlToImage,
                         it.publishedAt,
-                        it.content
+                        it.content,
+                        it.url
                     )
                 )
             }

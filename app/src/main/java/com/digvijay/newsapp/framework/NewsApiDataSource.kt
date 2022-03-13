@@ -24,7 +24,8 @@ class NewsApiDataSource(private val newsApiService: NewsApiService) : NewsDataSo
                                 it.description,
                                 it.urlToImage,
                                 it.publishedAt,
-                                it.content
+                                it.content,
+                                it.url
                             )
                         )
                     }

@@ -102,6 +102,7 @@ class HeadlinesFragment : Fragment(), HeadlinesRecyclerAdapter.ItemClickListener
             )
         )
         binding.headlinesRV.layoutManager = layoutManager
+        binding.headlinesRV.setHasFixedSize(true)
 
         with(binding.swipeRefresh) {
             setOnRefreshListener {

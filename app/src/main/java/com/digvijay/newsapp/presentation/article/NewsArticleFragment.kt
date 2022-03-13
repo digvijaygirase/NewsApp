@@ -1,5 +1,7 @@
 package com.digvijay.newsapp.presentation.article
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -40,6 +42,10 @@ class NewsArticleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         logTrackScreenEvent()
+        populateViews()
+    }
+
+    private fun populateViews() {
         val args: NewsArticleFragmentArgs by navArgs()
         viewModel.headlinesResource.value?.run {
             data?.get(args.position)?.run {
@@ -49,20 +55,32 @@ class NewsArticleFragment : Fragment() {
                 } else {
                     binding.authorNameTV.text = getString(R.string.unknown)
                 }
-                binding.titleTV.text = title
                 binding.publishedDateTV.setDate(publishedAt ?: "")
-                binding.descriptionTV.text = description
-                binding.contentTV.text = content
+                if (!title.isNullOrEmpty()) binding.titleTV.setHtmlText(title)
+                if (!description.isNullOrEmpty()) binding.descriptionTV.setHtmlText(description)
+                if (!content.isNullOrEmpty()) binding.contentTV.setHtmlText(content)
                 Glide.with(binding.root)
                     .load(urlToImage)
                     .placeholder(R.drawable.no_image)
                     .into(binding.newsImageIV)
+                if (!url.isNullOrEmpty()) {
+                    binding.urlLinkTV.setOnClickListener { openUrlLink(url) }
+                    binding.urlLinkTV.text = url
+                } else {
+                    binding.clickLinkTV.visibility = View.GONE
+                    binding.urlLinkTV.visibility = View.GONE
+                }
             }
         }
     }
 
+    private fun openUrlLink(url: String) {
+        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        startActivity(browserIntent)
+    }
+
     private fun logNewsClickEvent(newsTitle: String) {
-        firebaseAnalytics.logEvent("News click") {
+        firebaseAnalytics.logEvent("News_click") {
             param("news_title", newsTitle)
         }
     }
